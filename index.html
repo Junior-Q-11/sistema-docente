@@ -1,334 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Gestión Docente</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión Docente</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Sidebar / Menú izquierdo -->
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <h1>Sistema Docente</h1>
-        <button id="toggle-sidebar" class="toggle-sidebar">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-      <nav class="sidebar-nav">
-        <ul>
-          <li>
-            <a href="#" class="nav-link active" data-section="asistencia">
-              <i class="fas fa-clipboard-check"></i>
-              <span>Asistencia Docente</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link" data-section="horario">
-              <i class="fas fa-calendar-alt"></i>
-              <span>Horario Docente</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link" data-section="informacion">
-              <i class="fas fa-user"></i>
-              <span>Información Docente</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div class="sidebar-footer">
-        <p>Fase 1 - UNI</p>
-      </div>
-    </aside>
-
-    <!-- Contenido principal -->
-    <main class="main-content">
-      <!-- Selector de semestre (común para todas las secciones) -->
-      <div class="semestre-selector">
-        <label for="semestre">Semestre:</label>
-        <select id="semestre">
-          <option value="2024-1">2024-1</option>
-          <option value="2023-2">2023-2</option>
-          <option value="2023-1">2023-1</option>
-        </select>
-      </div>
-
-      <!-- Sección de Asistencia -->
-      <section id="asistencia" class="section active">
-        <div class="section-header">
-          <h2>Asistencia Docente</h2>
-          <button id="btn-nueva-asistencia" class="btn btn-primary">
-            <i class="fas fa-plus"></i> Marcar Asistencia
-          </button>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3>Registro de Asistencias - <span id="semestre-asistencia">2024-1</span></h3>
-          </div>
-          <div class="card-body">
-            <table id="tabla-asistencias">
-              <thead>
-                <tr>
-                  <th>Fecha</th>
-                  <th>Hora Entrada</th>
-                  <th>Hora Salida</th>
-                  <th>Estado</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Se llenará dinámicamente con JavaScript -->
-              </tbody>
-            </table>
-            <div id="no-asistencias" class="empty-message" style="display: none;">
-              No hay registros de asistencia para este semestre.
+    <div class="contenedor">
+        <!-- Menú lateral -->
+        <aside class="menu-lateral">
+            <div class="perfil-docente">
+                <img src="https://th.bing.com/th/id/R.650ee5da4184f43ad21682d5c768297e?rik=By5xs4nBfqJPGg&pid=ImgRaw&r=0" alt="Foto de perfil" class="foto-perfil">
+                <h3 id="nombreDocente">Cargando...</h3>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Sección de Horario -->
-      <section id="horario" class="section">
-        <div class="section-header">
-          <h2>Horario Docente</h2>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3>Horario Académico - <span id="semestre-horario">2024-1</span></h3>
-          </div>
-          <div class="card-body">
-            <div class="horario-container">
-              <div class="horario-grid" id="horario-grid">
-                <!-- Se llenará dinámicamente con JavaScript -->
-              </div>
-            </div>
-            <div id="no-horario" class="empty-message" style="display: none;">
-              No hay horarios registrados para este semestre.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Sección de Información -->
-      <section id="informacion" class="section">
-        <div class="section-header">
-          <h2>Información Docente</h2>
-        </div>
-
-        <div class="tabs">
-          <div class="tab-header">
-            <button class="tab-btn active" data-tab="datos-generales">Datos Generales</button>
-            <button class="tab-btn" data-tab="domicilio">Domicilio</button>
-            <button class="tab-btn" data-tab="datos-familiares">Datos Familiares</button>
-          </div>
-
-          <!-- Tab de Datos Generales -->
-          <div id="datos-generales" class="tab-content active">
-            <div class="card">
-              <div class="card-header">
-                <h3>Datos Generales</h3>
-                <button id="btn-editar-datos" class="btn btn-icon">
-                  <i class="fas fa-pencil-alt"></i>
-                </button>
-              </div>
-              <div class="card-body">
-                <div id="vista-datos-generales" class="info-grid">
-                  <!-- Se llenará dinámicamente con JavaScript -->
+            <nav>
+                <ul>
+                    <li><a href="#" class="activo" data-seccion="asistencia">Asistencia Docente</a></li>
+                    <li><a href="#" data-seccion="horario">Horario Docente</a></li>
+                    <li><a href="#" data-seccion="informacion">Información Docente</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Contenido principal -->
+        <main class="contenido-principal">
+            <header class="encabezado">
+                <div class="selector-semestre">
+                    <label for="semestre">Semestre:</label>
+                    <select id="semestre">
+                        <option value="2023-1">2023-1</option>
+                        <option value="2023-2" selected>2023-2</option>
+                        <option value="2024-1">2024-1</option>
+                    </select>
                 </div>
-                <form id="form-datos-generales" class="form-grid" style="display: none;">
-                  <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="apellidos">Apellidos</label>
-                    <input type="text" id="apellidos" name="apellidos" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="dni">DNI</label>
-                    <input type="text" id="dni" name="dni" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="fechaNacimiento">Fecha de Nacimiento</label>
-                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="telefono">Teléfono</label>
-                    <input type="text" id="telefono" name="telefono" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                  </div>
-                  <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                  </div>
-                </form>
-              </div>
+                <h2 id="tituloPagina">Asistencia Docente</h2>
+            </header>
+            
+            <!-- Incluir las secciones desde archivos separados -->
+            <div id="contenidoAsistencia" class="seccion-contenido activo">
+                <!-- Contenido de asistencia -->
+                <div id="asistencia-container"></div>
             </div>
-          </div>
-
-          <!-- Tab de Domicilio -->
-          <div id="domicilio" class="tab-content">
-            <div class="card">
-              <div class="card-header">
-                <h3>Domicilio</h3>
-                <button id="btn-editar-domicilio" class="btn btn-icon">
-                  <i class="fas fa-pencil-alt"></i>
-                </button>
-              </div>
-              <div class="card-body">
-                <div id="vista-domicilio" class="info-grid">
-                  <!-- Se llenará dinámicamente con JavaScript -->
-                </div>
-                <form id="form-domicilio" class="form-grid" style="display: none;">
-                  <div class="form-group full-width">
-                    <label for="direccion">Dirección</label>
-                    <input type="text" id="direccion" name="direccion" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="distrito">Distrito</label>
-                    <input type="text" id="distrito" name="distrito" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="provincia">Provincia</label>
-                    <input type="text" id="provincia" name="provincia" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="departamento">Departamento</label>
-                    <input type="text" id="departamento" name="departamento" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="codigoPostal">Código Postal</label>
-                    <input type="text" id="codigoPostal" name="codigoPostal" required>
-                  </div>
-                  <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                  </div>
-                </form>
-              </div>
+            
+            <div id="contenidoHorario" class="seccion-contenido">
+                <!-- Contenido de horario -->
+                <div id="horario-container"></div>
             </div>
-          </div>
-
-          <!-- Tab de Datos Familiares -->
-          <div id="datos-familiares" class="tab-content">
-            <div class="card">
-              <div class="card-header">
-                <h3>Datos Familiares</h3>
-                <button id="btn-agregar-familiar" class="btn btn-primary">
-                  <i class="fas fa-plus"></i> Agregar Familiar
-                </button>
-              </div>
-              <div class="card-body">
-                <table id="tabla-familiares">
-                  <thead>
-                    <tr>
-                      <th>Nombre</th>
-                      <th>Apellidos</th>
-                      <th>Parentesco</th>
-                      <th>Teléfono</th>
-                      <th>Acciones</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- Se llenará dinámicamente con JavaScript -->
-                  </tbody>
-                </table>
-                <div id="no-familiares" class="empty-message" style="display: none;">
-                  No hay familiares registrados.
-                </div>
-              </div>
+            
+            <div id="contenidoInformacion" class="seccion-contenido">
+                <!-- Contenido de información -->
+                <div id="informacion-container"></div>
             </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <!-- Modal para nueva asistencia -->
-  <div id="modal-asistencia" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3>Registrar Asistencia</h3>
-        <button class="modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form id="form-asistencia">
-          <div class="form-group">
-            <label for="fecha-asistencia">Fecha</label>
-            <input type="date" id="fecha-asistencia" name="fecha" required>
-          </div>
-          <div class="form-group">
-            <label for="hora-entrada">Hora de Entrada</label>
-            <input type="time" id="hora-entrada" name="horaEntrada" required>
-          </div>
-          <div class="form-group">
-            <label for="hora-salida">Hora de Salida</label>
-            <input type="time" id="hora-salida" name="horaSalida" required>
-          </div>
-          <div class="form-group">
-            <label>Estado</label>
-            <div class="radio-group">
-              <label>
-                <input type="radio" name="estado" value="presente" checked> Presente
-              </label>
-              <label>
-                <input type="radio" name="estado" value="tardanza"> Tardanza
-              </label>
-              <label>
-                <input type="radio" name="estado" value="ausente"> Ausente
-              </label>
-            </div>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Guardar</button>
-          </div>
-        </form>
-      </div>
+        </main>
     </div>
-  </div>
 
-  <!-- Modal para familiar -->
-  <div id="modal-familiar" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 id="titulo-modal-familiar">Agregar Familiar</h3>
-        <button class="modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form id="form-familiar">
-          <input type="hidden" id="familiar-id" name="id">
-          <div class="form-group">
-            <label for="familiar-nombre">Nombre</label>
-            <input type="text" id="familiar-nombre" name="nombre" required>
-          </div>
-          <div class="form-group">
-            <label for="familiar-apellidos">Apellidos</label>
-            <input type="text" id="familiar-apellidos" name="apellidos" required>
-          </div>
-          <div class="form-group">
-            <label for="familiar-parentesco">Parentesco</label>
-            <input type="text" id="familiar-parentesco" name="parentesco" required>
-          </div>
-          <div class="form-group">
-            <label for="familiar-telefono">Teléfono</label>
-            <input type="text" id="familiar-telefono" name="telefono" required>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Guardar</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+    <!-- Contenedor para modales -->
+    <div id="modales-container"></div>
 
-  <!-- Scripts -->
-  <script type="module" src="js/data.js"></script>
-    <script type="module" src="js/app.js"></script>
+    <!-- Scripts -->
+    <script src="js/datos.js"></script>
+    <script src="js/cargar-componentes.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/asistencia.js"></script>
+    <script src="js/horario.js"></script>
+    <script src="js/informacion.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
 

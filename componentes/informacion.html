@@ -1,0 +1,85 @@
+<div class="pestanas">
+    <button class="pestana activa" data-pestana="datosGenerales">Datos Generales</button>
+    <button class="pestana" data-pestana="datosDomicilio">Domicilio</button>
+    <button class="pestana" data-pestana="datosFamiliares">Datos Familiares</button>
+</div>
+
+<div id="datosGenerales" class="contenido-pestana activo">
+    <div class="controles">
+        <button id="btnEditarDatosGenerales" class="boton boton-primario">Editar Datos Generales</button>
+    </div>
+    <div class="info-card">
+        <h3>Información Personal</h3>
+        <div class="info-item">
+            <span class="info-label">Nombre:</span>
+            <span id="infoNombre" class="info-value"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Dni:</span>
+            <span id="infoDni" class="info-value"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Especialidad:</span>
+            <span id="infoEspecialidad" class="info-value"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Correo electrónico:</span>
+            <span id="infoCorreo" class="info-value"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Teléfono:</span>
+            <span id="infoTelefono" class="info-value"></span>
+        </div>
+    </div>
+</div>
+
+<div id="datosDomicilio" class="contenido-pestana">
+    <div class="controles">
+        <button id="btnEditarDomicilio" class="boton boton-primario">Editar Domicilio</button>
+    </div>
+    <div class="info-card">
+        <h3>Direccion</h3>
+        <div class="info-item">
+            <span class="info-label">Direccion:</span>
+            <span id="infoDireccion" class="info-value"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Departamento:</span>
+            <span id="infoDepartamento" class="info-value"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Provincia:</span>
+            <span id="infoProvincia" class="info-value"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Distrito:</span>
+            <span id="infoDistrito" class="info-value"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Código postal:</span>
+            <span id="infoCodigoPostal" class="info-value"></span>
+        </div>
+    </div>
+</div>
+
+<div id="datosFamiliares" class="contenido-pestana">
+    <div class="controles">
+        <button id="btnAgregarFamiliar" class="boton boton-primario">Agregar Familiar</button>
+    </div>
+    <div class="tabla-contenedor">
+        <table class="tabla-datos">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Parentesco</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaFamiliares">
+                <!-- Datos familiares se cargarán aquí -->
+            </tbody>
+        </table>
+    </div>
+</div>
+

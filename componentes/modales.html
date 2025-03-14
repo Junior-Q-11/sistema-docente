@@ -1,0 +1,125 @@
+<!-- Modal para marcar asistencia -->
+<div id="modalAsistencia" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar-modal">&times;</span>
+        <h3>Marcar Asistencia</h3>
+        <form id="formAsistencia">
+            <div class="grupo-campo">
+                <label for="fechaAsistencia">Fecha:</label>
+                <input type="date" id="fechaAsistencia" name="fechaAsistencia" required>
+            </div>
+            <div class="grupo-campo">
+                <label for="horaEntrada">Hora de entrada:</label>
+                <input type="time" id="horaEntrada" name="horaEntrada" required>
+            </div>
+            <div class="grupo-campo">
+                <label for="horaSalida">Hora de salida:</label>
+                <input type="time" id="horaSalida" name="horaSalida" required>
+            </div>
+            <div class="grupo-campo">
+                <label for="estadoAsistencia">Estado:</label>
+                <select id="estadoAsistencia" name="estadoAsistencia" required>
+                    <option value="Presente">Presente</option>
+                    <option value="Retardo">Retardo</option>
+                    <option value="Justificado">Justificado</option>
+                    <option value="Ausente">Ausente</option>
+                </select>
+            </div>
+            <button type="submit" class="boton boton-primario">Guardar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal para datos generales -->
+<div id="modalDatosGenerales" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar-modal">&times;</span>
+        <h3>Editar Datos Generales</h3>
+        <form id="formDatosGenerales">
+            <div class="grupo-campo">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="grupo-campo">
+                <label for="cedula">Cédula profesional:</label>
+                <input type="text" id="cedula" name="cedula" required>
+            </div>
+            <div class="grupo-campo">
+                <label for="especialidad">Especialidad:</label>
+                <input type="text" id="especialidad" name="especialidad" required>
+            </div>
+            <div class="grupo-campo">
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            <div class="grupo-campo">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <button type="submit" class="boton boton-primario">Guardar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal para domicilio -->
+<div id="modalDomicilio" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar-modal">&times;</span>
+        <h3>Editar Domicilio</h3>
+        <form id="formDatosDomicilio">
+            <div class="grupo-campo">
+                <label for="calle">Calle y número:</label>
+                <input type="text" id="calle" name="calle" required>
+            </div>
+            <div class="grupo-campo">
+                <label for="colonia">Colonia:</label>
+                <input type="text" id="colonia" name="colonia" required>
+            </div>
+            <div class="grupo-campo">
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" required>
+            </div>
+            <div class="grupo-campo">
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" required>
+            </div>
+            <div class="grupo-campo">
+                <label for="codigoPostal">Código postal:</label>
+                <input type="text" id="codigoPostal" name="codigoPostal" required>
+            </div>
+            <button type="submit" class="boton boton-primario">Guardar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal para familiar -->
+<div id="modalFamiliar" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar-modal">&times;</span>
+        <h3>Datos del Familiar</h3>
+        <form id="formFamiliar">
+            <input type="hidden" id="idFamiliar">
+            <div class="grupo-campo">
+                <label for="nombreFamiliar">Nombre:</label>
+                <input type="text" id="nombreFamiliar" name="nombreFamiliar" required>
+            </div>
+            <div class="grupo-campo">
+                <label for="parentesco">Parentesco:</label>
+                <select id="parentesco" name="parentesco" required>
+                    <option value="">Seleccione...</option>
+                    <option value="Cónyuge">Cónyuge</option>
+                    <option value="Hijo/a">Hijo/a</option>
+                    <option value="Padre">Padre</option>
+                    <option value="Madre">Madre</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+            <div class="grupo-campo">
+                <label for="telefonoFamiliar">Teléfono:</label>
+                <input type="tel" id="telefonoFamiliar" name="telefonoFamiliar" required>
+            </div>
+            <button type="submit" class="boton boton-primario">Guardar</button>
+        </form>
+    </div>
+</div>
+
